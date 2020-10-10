@@ -1,0 +1,31 @@
+<mat-list>
+  <mat-list-item [matMenuTriggerFor]="forecastMenu">
+    <mat-icon matListIcon>keyboard_arrow_down</mat-icon>
+    <h3 matLine>Forecast</h3>
+  </mat-list-item>
+  <mat-divider></mat-divider>
+  <mat-list-item [matMenuTriggerFor]="addMenu">
+    <mat-icon matListIcon>keyboard_arrow_down</mat-icon>
+    <h3 matLine>Add</h3>
+  </mat-list-item>
+</mat-list>
+
+<!-- Forecast MENU -->
+<mat-menu #forecastMenu="matMenu" xPosition="before">
+  <button (click)="closeSidebar()" mat-menu-item routerLink="card-forecast">
+    <mat-icon>settings_system_daydream</mat-icon>Weather
+  </button>
+  <button (click)="closeSidebar()" mat-menu-item routerLink="forecast-chart">
+    <mat-icon>insert_chart_outlined</mat-icon>Chart
+  </button>
+</mat-menu>
+
+<!-- Add MENU -->
+<mat-menu #addMenu="matMenu" xPosition="before">
+  <button (click)="closeSidebar()" mat-menu-item routerLink="add-city">
+    <mat-icon>location_city</mat-icon>Location
+  </button>
+  <button (click)="closeSidebar()" mat-menu-item routerLink="add-forecast">
+    <mat-icon>nights_stay</mat-icon>Forecast
+  </button>
+</mat-menu>

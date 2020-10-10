@@ -1,0 +1,37 @@
+<div class="card-container">
+  <form
+    [formGroup]="addCityForm"
+    #formDirective="ngForm"
+    (ngSubmit)="onSubmit(formDirective)"
+  >
+    <div class="form-title">
+      <h1>Add City</h1>
+      <mat-icon>location_city</mat-icon>
+    </div>
+    <mat-form-field appearance="outline">
+      <mat-label>City</mat-label>
+      <input formControlName="RegisterCity" type="text" matInput />
+      <mat-error
+        *ngIf="
+          addCityForm.get('RegisterCity').hasError('maxlength') ||
+          addCityForm.get('RegisterCity').hasError('minlength')
+        "
+      >
+        City should be between 2 and 32 letters
+      </mat-error>
+      <mat-error *ngIf="addCityForm.get('RegisterCity').hasError('required')">
+        City is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <button
+      mat-raised-button
+      [disabled]="addCityForm.invalid"
+      type="submit"
+      color="primary"
+    >
+      Submit
+    </button>
+  </form>
+  <!-- {{ addCityForm.value | json }} -->
+</div>

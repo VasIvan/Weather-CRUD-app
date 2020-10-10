@@ -1,0 +1,131 @@
+<div class="container">
+  <div class="card-border">
+    <form
+      [formGroup]="cardForecastForm"
+      #formDirective="ngForm"
+      (ngSubmit)="onSubmit()"
+    >
+      <mat-form-field appearance="outline">
+        <mat-label>Location</mat-label>
+        <mat-select formControlName="City" [(value)]="selectedCity">
+          <mat-option>None</mat-option>
+          <mat-option
+            *ngFor="let city of cities"
+            value="{{ city.RegisterCity }}"
+            >{{ city.RegisterCity }}</mat-option
+          >
+        </mat-select>
+        <mat-hint align="end"
+          ><a routerLink="../add-city"
+            >Add new <mat-icon>location_city</mat-icon>Location from here</a
+          ></mat-hint
+        >
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Choose a date</mat-label>
+        <input
+          formControlName="Day"
+          matInput
+          [matDatepicker]="cardForcastDatePicker"
+        />
+        <mat-datepicker-toggle
+          [for]="cardForcastDatePicker"
+          matSuffix
+        ></mat-datepicker-toggle>
+        <mat-datepicker #cardForcastDatePicker></mat-datepicker>
+      </mat-form-field>
+      <button mat-raised-button type="submit" color="primary">Find</button>
+    </form>
+    <!--     <button
+      mat-icon-button
+      disableRipple
+      color="warn"
+      routerLink="/"
+      class="closeCard"
+    >
+      <mat-icon>highlight_off</mat-icon>
+    </button> -->
+    <mat-grid-list
+      *ngIf="!dataDBarived"
+      class="card-container"
+      rowHeight="fit"
+      cols="2"
+    >
+      <mat-grid-tile>{{ mockData.Day | date }}</mat-grid-tile>
+
+      <mat-grid-tile>{{ mockData.City }}</mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-icon *ngIf="mockData.Rain > 50" color="primary">grain</mat-icon>
+        <mat-icon *ngIf="mockData.Rain <= 50" color="{{ weatherColor }}">{{
+          weatherIcon
+        }}</mat-icon>
+      </mat-grid-tile>
+
+      <mat-grid-tile
+        ><h1>{{ mockData.Temperature }}&#176; C</h1></mat-grid-tile
+      >
+
+      <mat-grid-tile>
+        <h2 *ngIf="flipWind">Wind --></h2>
+        <app-card-forecast-spinner
+          *ngIf="!flipWind"
+          [value]="mockData.Rain"
+          [symbol]="symbols[0]"
+        ></app-card-forecast-spinner
+      ></mat-grid-tile>
+
+      <mat-grid-tile>
+        <h2 *ngIf="flipRain"><-- Rain</h2>
+        <app-card-forecast-spinner
+          *ngIf="!flipRain"
+          [value]="mockData.Wind"
+          [symbol]="symbols[1]"
+        ></app-card-forecast-spinner
+      ></mat-grid-tile>
+    </mat-grid-list>
+
+    <!--  -->
+
+    <mat-grid-list
+      *ngIf="dataDBarived"
+      class="card-container"
+      rowHeight="fit"
+      cols="2"
+    >
+      <mat-grid-tile>{{ cardDay | date }}</mat-grid-tile>
+
+      <mat-grid-tile>{{ cardCity }}</mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-icon *ngIf="cardRain > 50" color="primary">grain</mat-icon>
+        <mat-icon *ngIf="cardRain <= 50" color="{{ weatherColor }}">{{
+          weatherIcon
+        }}</mat-icon>
+      </mat-grid-tile>
+
+      <mat-grid-tile
+        ><h1>{{ cardTemperature }}&#176; C</h1></mat-grid-tile
+      >
+
+      <mat-grid-tile>
+        <h2 *ngIf="flipWind">Wind --></h2>
+        <app-card-forecast-spinner
+          *ngIf="!flipWind"
+          [value]="cardRain"
+          [symbol]="symbols[0]"
+        ></app-card-forecast-spinner
+      ></mat-grid-tile>
+
+      <mat-grid-tile>
+        <h2 *ngIf="flipRain"><-- Rain</h2>
+        <app-card-forecast-spinner
+          *ngIf="!flipRain"
+          [value]="cardWind"
+          [symbol]="symbols[1]"
+        ></app-card-forecast-spinner
+      ></mat-grid-tile>
+    </mat-grid-list>
+  </div>
+</div>

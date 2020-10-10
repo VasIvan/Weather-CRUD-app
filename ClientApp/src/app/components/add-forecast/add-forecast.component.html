@@ -1,0 +1,121 @@
+<div class="card-container">
+  <form
+    [formGroup]="addForecastForm"
+    #formDirective="ngForm"
+    (ngSubmit)="onSubmit(formDirective)"
+  >
+    <div class="form-title">
+      <h1>Add Forecast</h1>
+      <mat-icon>nights_stay</mat-icon>
+    </div>
+    <mat-form-field appearance="outline">
+      <mat-label>Temperature</mat-label>
+      <input formControlName="Temperature" type="number" matInput />
+      <h4 matSuffix>&#176; C</h4>
+      <mat-error
+        *ngIf="
+          addForecastForm.get('Temperature').hasError('max') ||
+          addForecastForm.get('Temperature').hasError('min')
+        "
+      >
+        Temperature should be between -99 and 99 degrees
+      </mat-error>
+      <mat-error
+        *ngIf="addForecastForm.get('Temperature').hasError('required')"
+      >
+        Temperature is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Rain</mat-label>
+      <input formControlName="Rain" type="number" matInput />
+      <h4 matSuffix>&nbsp; %</h4>
+      <mat-hint align="end">% chance of raining</mat-hint>
+      <mat-error
+        *ngIf="
+          addForecastForm.get('Rain').hasError('max') ||
+          addForecastForm.get('Rain').hasError('min')
+        "
+      >
+        Rain should be between 0 and 100%
+      </mat-error>
+      <mat-error *ngIf="addForecastForm.get('Rain').hasError('required')">
+        Rain is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Wind</mat-label>
+      <input formControlName="Wind" type="number" matInput />
+      <h4 matSuffix>km/h</h4>
+      <mat-error
+        *ngIf="
+          addForecastForm.get('Wind').hasError('max') ||
+          addForecastForm.get('Wind').hasError('min')
+        "
+      >
+        Wind should be between 0 and 100 km/h
+      </mat-error>
+      <mat-error *ngIf="addForecastForm.get('Wind').hasError('required')">
+        Wind is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Choose a date</mat-label>
+      <input
+        formControlName="Day"
+        matInput
+        [matDatepicker]="addForcastDatePicker"
+        [min]="minDate"
+      />
+      <mat-datepicker-toggle
+        [for]="addForcastDatePicker"
+        matSuffix
+      ></mat-datepicker-toggle>
+      <mat-datepicker #addForcastDatePicker></mat-datepicker>
+      <mat-error *ngIf="addForecastForm.get('Day').hasError('required')">
+        Date is <strong>required</strong>
+      </mat-error>
+      <mat-error
+        *ngIf="addForecastForm.get('Day').hasError('matDatepickerMin')"
+      >
+        You cannot choose day earlier than today
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Location</mat-label>
+      <mat-select formControlName="City" [(value)]="selectedCity">
+        <mat-option>None</mat-option>
+        <mat-option
+          *ngFor="let city of cities"
+          value="{{ city.RegisterCity }}"
+          >{{ city.RegisterCity }}</mat-option
+        >
+      </mat-select>
+      <mat-hint align="end"
+        ><a routerLink="../add-city"
+          >Add new <mat-icon>location_city</mat-icon>Location from here</a
+        ></mat-hint
+      >
+      <mat-error *ngIf="addForecastForm.get('City').hasError('required')">
+        City is <strong>required</strong>.
+        <a routerLink="../add-city"
+          >Add new <mat-icon>location_city</mat-icon>Location from here</a
+        >
+      </mat-error>
+    </mat-form-field>
+
+    <button
+      mat-raised-button
+      [disabled]="addForecastForm.invalid"
+      type="submit"
+      color="primary"
+    >
+      Submit
+    </button>
+  </form>
+  <!--   {{ addForecastForm.value | json }} -->
+</div>

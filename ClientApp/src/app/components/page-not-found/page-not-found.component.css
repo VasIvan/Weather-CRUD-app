@@ -1,0 +1,19 @@
+.card-container {
+  display: grid;
+  place-items: center;
+  height: 80vh;
+}
+
+.card-inside {
+  max-width: 400px;
+}
+
+.card-text {
+  text-align: center;
+  color: red;
+  margin: 10px;
+}
+
+.card-text button {
+  width: 100%;
+}

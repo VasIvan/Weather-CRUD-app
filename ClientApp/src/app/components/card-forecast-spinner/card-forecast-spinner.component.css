@@ -1,0 +1,15 @@
+.mat-progress-spinner {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.message {
+  position: absolute;
+  text-align: center;
+  top: 45%;
+  left: 40%;
+}
+
+.symbol {
+  font-size: 12px;
+}

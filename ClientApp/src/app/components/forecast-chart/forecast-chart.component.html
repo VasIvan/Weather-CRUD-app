@@ -1,0 +1,22 @@
+<div style="max-width: 800px; margin: auto">
+  <mat-form-field appearance="outline">
+    <mat-label>Location</mat-label>
+    <mat-select
+      (selectionChange)="onSelectChange($event.value)"
+      [(value)]="selectedCity"
+    >
+      <mat-option>None</mat-option>
+      <mat-option *ngFor="let city of cities" value="{{ city.RegisterCity }}">{{
+        city.RegisterCity
+      }}</mat-option>
+    </mat-select>
+    <mat-hint align="end"
+      ><a routerLink="../add-city"
+        >Add new <mat-icon>location_city</mat-icon>Location from here</a
+      ></mat-hint
+    >
+  </mat-form-field>
+  <div>
+    <canvas id="canvas-city"></canvas>
+  </div>
+</div>

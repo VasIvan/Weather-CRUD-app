@@ -1,0 +1,9 @@
+<mat-sidenav-container>
+  <mat-sidenav [(opened)]="opened">
+    <app-sidemenu (setOpenedFalse)="setOpenedFalse()"></app-sidemenu>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <app-navbar (sidenavToggle)="sidenavToggle()"></app-navbar>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
