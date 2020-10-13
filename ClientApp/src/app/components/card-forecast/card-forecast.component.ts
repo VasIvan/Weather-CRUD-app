@@ -29,16 +29,16 @@ export class CardForecastComponent implements OnInit {
   symbols = ['%', 'km/h'];
   flipRain = true;
   flipWind = false;
-  cities: any = [];
+  cities = [];
   selectedCity: string;
 
-  cardTemperature;
-  cardRain;
-  cardWind;
-  cardDay;
-  cardCity;
+  cardTemperature: number;
+  cardRain: number;
+  cardWind: number;
+  cardDay: string;
+  cardCity: string;
 
-  dataDBarived;
+  dataDBarived: boolean;
 
   constructor(
     private weather: WeatherService,
@@ -65,13 +65,12 @@ export class CardForecastComponent implements OnInit {
     this.dataDBarived = false;
   }
 
-  flip() {
+  flip(): void {
     this.flipRain = !this.flipRain;
     this.flipWind = !this.flipWind;
   }
 
-  onSubmit() {
-    //console.log(this.cardForecastForm.value.Day);
+  onSubmit(): void {
     this.cardForecastForm.value.Day.setHours(
       this.cardForecastForm.value.Day.getHours() + 5
     );
@@ -79,7 +78,6 @@ export class CardForecastComponent implements OnInit {
       0,
       -5
     );
-    //console.log(this.cardForecastForm.value.Day);
     this.weather
       .getForecastByCityDay(
         this.cardForecastForm.value.City,
@@ -102,11 +100,11 @@ export class CardForecastComponent implements OnInit {
       );
   }
 
-  openSnackBar(message, action) {
+  openSnackBar(message: string, action: string): void {
     this.snackBar.open(message, action, { duration: 10000 });
   }
 
-  setIconColor(temperature) {
+  setIconColor(temperature: number): void {
     if (temperature > 20) {
       this.weatherIcon = 'wb_sunny';
       this.weatherColor = 'accent';

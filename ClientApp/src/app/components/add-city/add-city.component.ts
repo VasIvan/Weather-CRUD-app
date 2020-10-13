@@ -24,7 +24,7 @@ export class AddCityComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  onSubmit(formDirective: FormGroupDirective) {
+  onSubmit(formDirective: FormGroupDirective): void {
     this.weather.addCity(this.addCityForm.value).subscribe(
       () => {
         this.openSnackBar('Successfully added new city! ', 'ok');
@@ -36,7 +36,7 @@ export class AddCityComponent implements OnInit {
     formDirective.resetForm();
   }
 
-  openSnackBar(message, action) {
+  openSnackBar(message, action): void {
     this.snackBar.open(message, action, { duration: 10000 });
   }
 }

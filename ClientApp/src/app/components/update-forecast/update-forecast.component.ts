@@ -10,7 +10,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./update-forecast.component.css'],
 })
 export class UpdateForecastComponent implements OnInit {
-  cities: any = [];
+  cities = [];
   minDate = new Date();
   selectedCity: string;
 
@@ -61,24 +61,24 @@ export class UpdateForecastComponent implements OnInit {
     });
   }
 
-  onSubmit() {
+  onSubmit(): void {
     this.weather
       .updateForecast(
         this.router.snapshot.params.id,
         this.addForecastForm.value
       )
       .subscribe(
-        (result) => {
+        () => {
           this.openSnackBar(`Successfully updated forecast!`, 'OK');
         },
         (error) => {
           this.openSnackBar(error.error, 'OK');
         }
       );
-    this.routerLink.navigate(['/']);
+    setTimeout(() => {this.routerLink.navigate(['/']); }, 100);
   }
 
-  openSnackBar(message, action) {
+  openSnackBar(message: string, action: string): void {
     this.snackBar.open(message, action, { duration: 10000 });
   }
 }

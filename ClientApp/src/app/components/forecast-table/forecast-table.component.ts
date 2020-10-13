@@ -5,14 +5,6 @@ import { MatSort } from '@angular/material/sort';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
-/* interface ForecastData {
-  Temperature: number;
-  Rain: number;
-  Wind: number;
-  Day: string;
-  City: string;
-} */
-
 @Component({
   selector: 'app-forecast-table',
   templateUrl: './forecast-table.component.html',
@@ -37,7 +29,7 @@ export class ForecastTableComponent implements OnInit {
     this.getData();
   }
 
-  getData() {
+  getData(): void {
     this.weather.getForecastData().subscribe((result: any) => {
       this.dataSource = new MatTableDataSource(result);
       this.dataSource.sort = this.sort;
@@ -45,11 +37,11 @@ export class ForecastTableComponent implements OnInit {
     });
   }
 
-  applyFilter(filterValue: string) {
+  applyFilter(filterValue: string): void {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-  onDelete(id) {
+  onDelete(id: number): void {
     this.weather.deleteForecast(id).subscribe((result) => {
       this.getData();
       this.snackBar.open(

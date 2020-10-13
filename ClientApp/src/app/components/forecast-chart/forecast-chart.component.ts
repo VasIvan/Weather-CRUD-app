@@ -10,7 +10,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class ForecastChartComponent implements OnInit {
   constructor(private weather: WeatherService, private snackBar: MatSnackBar) {}
-  cities: any = [];
+  cities = [];
   selectedCity: string;
   chart = [];
   cityName = '';
@@ -23,7 +23,7 @@ export class ForecastChartComponent implements OnInit {
     });
   }
 
-  onSelectChange(city) {
+  onSelectChange(city: string): void {
     this.cityName = city;
     this.cityDay = [];
     this.cityTemperature = [];
@@ -57,7 +57,7 @@ export class ForecastChartComponent implements OnInit {
     );
   }
 
-  openSnackBar(message, action) {
+  openSnackBar(message: string, action: string): void {
     this.snackBar.open(message, action, { duration: 10000 });
   }
 }

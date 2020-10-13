@@ -9,7 +9,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./add-forecast.component.css'],
 })
 export class AddForecastComponent implements OnInit {
-  cities: any = [];
+  cities = [];
   minDate = new Date();
   selectedCity: string;
 
@@ -36,13 +36,11 @@ export class AddForecastComponent implements OnInit {
     });
   }
 
-  onSubmit(formDirective: FormGroupDirective) {
-    //console.log(this.addForecastForm.value);
+  onSubmit(formDirective: FormGroupDirective): void {
     this.addForecastForm.value.Day.setHours(
       this.addForecastForm.value.Day.getHours() + 5
     );
     this.addForecastForm.value.Day = this.addForecastForm.value.Day.toISOString();
-    //console.log(this.addForecastForm.value);
 
     this.weather.addForecast(this.addForecastForm.value).subscribe(
       (result) => {
@@ -58,7 +56,7 @@ export class AddForecastComponent implements OnInit {
     formDirective.resetForm();
   }
 
-  openSnackBar(message, action) {
+  openSnackBar(message: string, action: string): void {
     this.snackBar.open(message, action, { duration: 10000 });
   }
 }

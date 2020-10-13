@@ -37,15 +37,6 @@
       </mat-form-field>
       <button mat-raised-button type="submit" color="primary">Find</button>
     </form>
-    <!--     <button
-      mat-icon-button
-      disableRipple
-      color="warn"
-      routerLink="/"
-      class="closeCard"
-    >
-      <mat-icon>highlight_off</mat-icon>
-    </button> -->
     <mat-grid-list
       *ngIf="!dataDBarived"
       class="card-container"
@@ -85,8 +76,6 @@
         ></app-card-forecast-spinner
       ></mat-grid-tile>
     </mat-grid-list>
-
-    <!--  -->
 
     <mat-grid-list
       *ngIf="dataDBarived"

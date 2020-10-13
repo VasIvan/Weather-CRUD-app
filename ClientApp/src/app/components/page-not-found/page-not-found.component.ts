@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { WeatherService } from '../../weather.service';
 
 @Component({
   selector: 'app-page-not-found',
@@ -7,14 +6,8 @@ import { WeatherService } from '../../weather.service';
   styleUrls: ['./page-not-found.component.css'],
 })
 export class PageNotFoundComponent implements OnInit {
-  constructor(private weather: WeatherService) {}
-
-  collection = {};
+  constructor() {}
 
   ngOnInit(): void {
-    this.weather.getData().subscribe((result) => {
-      console.log(result);
-      this.collection = result;
-    });
   }
 }

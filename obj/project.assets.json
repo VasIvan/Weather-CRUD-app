@@ -10271,11 +10271,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "V:\\Dotnet-Angular\\Fullstack\\Fullstack\\Fullstack.csproj",
+      "projectUniqueName": "V:\\Web projects\\Weather CRUD app\\Fullstack\\Fullstack.csproj",
       "projectName": "Fullstack",
-      "projectPath": "V:\\Dotnet-Angular\\Fullstack\\Fullstack\\Fullstack.csproj",
+      "projectPath": "V:\\Web projects\\Weather CRUD app\\Fullstack\\Fullstack.csproj",
       "packagesPath": "C:\\Users\\Vasil\\.nuget\\packages\\",
-      "outputPath": "V:\\Dotnet-Angular\\Fullstack\\Fullstack\\obj\\",
+      "outputPath": "V:\\Web projects\\Weather CRUD app\\Fullstack\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Vasil\\AppData\\Roaming\\NuGet\\NuGet.Config",

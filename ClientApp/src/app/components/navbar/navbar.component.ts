@@ -11,7 +11,7 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  sidenavToggleFromNavbar() {
+  sidenavToggleFromNavbar(): void {
     this.sidenavToggle.emit();
   }
 }

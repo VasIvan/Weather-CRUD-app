@@ -6,8 +6,8 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./card-forecast-spinner.component.css'],
 })
 export class CardForecastSpinnerComponent implements OnInit {
-  @Input() value;
-  @Input() symbol;
+  @Input() value: number;
+  @Input() symbol: string;
 
   constructor() {}
 

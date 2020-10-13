@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "uobwG56cH0GG5S+HsHVIIvGc31W2YO1su6tU1+4S0QZfOS+UtXvXp5MQ5UDk+Kf9THsrt+mTwn4wMZPq424p3g==",
+  "dgSpecHash": "LgNiFo9/xm8xbDfO0MFwe00twBfy++/OQlJrwJ304xP6gmCZylUKhpMQz/dG9bezLdVIRnch3BdzNfPxNTpRZg==",
   "success": true,
-  "projectFilePath": "V:\\Dotnet-Angular\\Fullstack\\Fullstack\\Fullstack.csproj",
+  "projectFilePath": "V:\\Web projects\\Weather CRUD app\\Fullstack\\Fullstack.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Vasil\\.nuget\\packages\\microsoft.aspnetcore.authorization\\1.0.3\\microsoft.aspnetcore.authorization.1.0.3.nupkg.sha512",
     "C:\\Users\\Vasil\\.nuget\\packages\\microsoft.aspnetcore.cors\\2.2.0\\microsoft.aspnetcore.cors.2.2.0.nupkg.sha512",

@@ -12,7 +12,7 @@ export class SidemenuComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  closeSidebar() {
+  closeSidebar(): void {
     this.setOpenedFalse.emit();
   }
 }
