@@ -9,6 +9,7 @@ NB!!! You must have NODE.JS installed on your computer.
 ### Project structure
 
 -backend
+
 -frontend (ClientApp folder)
 
 ### Installation
