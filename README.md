@@ -94,13 +94,13 @@ On submit return to the table and display the updated data also success snackbar
 
 ![image](https://user-images.githubusercontent.com/55087458/96008749-8b27af00-0e48-11eb-8b5f-70969bb57fc1.png)
 
-Validations min-max letters(submit button disabled)
+Validations min-max letters(disabled submit button)
 
 ![image](https://user-images.githubusercontent.com/55087458/96009091-ea85bf00-0e48-11eb-88f4-9b367b7ea157.png)
 
 ![image](https://user-images.githubusercontent.com/55087458/96009184-06896080-0e49-11eb-9c12-464b793cf89e.png)
 
-Error handler (error message from the backend displayed with snackbar)
+Error handler (error message from the backend displayed with a snackbar)
 
 ![image](https://user-images.githubusercontent.com/55087458/96009411-4c462900-0e49-11eb-8f5b-205baff3c971.png)
 
@@ -112,7 +112,7 @@ Success message and clean form(when new city is submited)
 
 ![image](https://user-images.githubusercontent.com/55087458/96009760-b5c63780-0e49-11eb-8a87-ed246f0847be.png)
 
-Validations(submit button disabled)
+Validations(disabled submit button)
 
 ![image](https://user-images.githubusercontent.com/55087458/96012336-af858a80-0e4c-11eb-9257-53487d2cf0b3.png)
 
@@ -130,13 +130,13 @@ Success snackbar message and clean form(when form is submited)
 
 ![image](https://user-images.githubusercontent.com/55087458/96014805-7995d580-0e4f-11eb-8132-d72687c3fdfe.png)
 
-Error handler (error message from the backend displayed with snackbar)
+Error handler (error message from the backend displayed with a snackbar)
 
 ![image](https://user-images.githubusercontent.com/55087458/96014901-9500e080-0e4f-11eb-9e1a-8247c12e3b2c.png)
 
 - Forecast card
 
-Initially displays mock data
+Initially displays a mock data
 
 ![image](https://user-images.githubusercontent.com/55087458/96016624-9fbc7500-0e51-11eb-9fc5-bf599a9a36fe.png)
 
@@ -150,7 +150,7 @@ Appropriate wheather icon is displayed according the temperature and rain percen
 
 ![image](https://user-images.githubusercontent.com/55087458/96018312-c2e82400-0e53-11eb-97f2-3dd6f2690fe6.png)
 
-Error handler (error message from the backend displayed with snackbar)
+Error handler (error message from the backend is displayed with a snackbar)
 
 ![image](https://user-images.githubusercontent.com/55087458/96016973-15284580-0e52-11eb-97e1-8e426f5ceb19.png)
 
