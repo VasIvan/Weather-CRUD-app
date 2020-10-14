@@ -11,7 +11,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class UpdateForecastComponent implements OnInit {
   cities = [];
-  minDate = new Date();
   selectedCity: string;
 
   constructor(

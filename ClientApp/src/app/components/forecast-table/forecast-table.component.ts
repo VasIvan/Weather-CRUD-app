@@ -45,7 +45,7 @@ export class ForecastTableComponent implements OnInit {
     this.weather.deleteForecast(id).subscribe((result) => {
       this.getData();
       this.snackBar.open(
-        `Forecast for:  ${result['City']} on ${result['Day']} has been deleted!`,
+        `Forecast for:  ${result['City']} on ${result['Day'].slice(0, -9)} has been deleted!`,
         'OK',
         { duration: 10000 }
       );
